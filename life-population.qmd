@@ -1,0 +1,22 @@
+---
+title: "Life Expectancy and Population"
+---
+
+This page explores the relationship between life expectancy and population size.
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("gapminder.csv")
+
+latest_year = df["year"].max()
+sub = df[df["year"] == latest_year]
+
+plt.figure()
+plt.scatter(sub["population_millions"], sub["life_expectancy"], alpha=0.7)
+plt.xlabel("Population (millions)")
+plt.ylabel("Life Expectancy")
+plt.title(f"Life Expectancy vs Population ({latest_year})")
+plt.show()
+```
