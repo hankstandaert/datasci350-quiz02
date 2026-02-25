@@ -10,9 +10,7 @@ import matplotlib.pyplot as plt
 
 df = pd.read_csv("gapminder.csv")
 
-# Scatter: life expectancy vs GDP per capita, colored by year (simple approach)
-years = sorted(df["year"].unique())
-sample_years = [1952, 1977, 2007]  # show a few snapshots for readability
+sample_years = [1952, 1977, 2007]
 
 plt.figure()
 for y in sample_years:
@@ -25,3 +23,4 @@ plt.ylabel("Life Expectancy")
 plt.title("Life Expectancy vs GDP per Capita (selected years)")
 plt.legend()
 plt.show()
+```
