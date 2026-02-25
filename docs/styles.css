@@ -1,12 +1,43 @@
-/* Small, safe visual upgrades */
+/* Improve readability */
 .content {
-  max-width: 950px;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.6;
 }
 
+/* Headings */
+h1, h2, h3 {
+  letter-spacing: 0.3px;
+  margin-top: 1.5rem;
+}
+
+/* Navbar styling */
 .navbar {
   font-weight: 600;
 }
 
-h1, h2, h3 {
-  letter-spacing: 0.2px;
+.navbar a:hover {
+  opacity: 0.8;
+}
+
+/* Improve plot appearance */
+img, canvas {
+  border-radius: 8px;
+}
+
+/* Improve code blocks */
+pre {
+  border-radius: 8px;
+  padding: 12px;
+}
+
+/* Add spacing between sections */
+section {
+  margin-bottom: 2rem;
+}
+
+/* Slightly emphasize intro paragraph */
+p:first-of-type {
+  font-size: 1.05rem;
+  color: #444;
 }
