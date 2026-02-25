@@ -18,7 +18,14 @@
     "href": "life-gdp.html",
     "title": "Life Expectancy and GDP per Capita",
     "section": "",
-    "text": "This page explores how life expectancy relates to GDP per capita, and how that relationship changes across time.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\ndf = pd.read_csv(\"gapminder.csv\")\n\nsample_years = [1997, 2007]\n\nplt.figure()\nfor y in sample_years:\n    sub = df[df[\"year\"] == y]\n    plt.scatter(sub[\"gdp_per_capita\"], sub[\"life_expectancy\"], label=str(y), alpha=0.7)\n\nplt.xscale(\"log\")\nplt.xlabel(\"GDP per Capita (log scale)\")\nplt.ylabel(\"Life Expectancy\")\nplt.title(\"Life Expectancy vs GDP per Capita (selected years)\")\nplt.legend()\nplt.show()"
+    "text": "This page explores how life expectancy relates to GDP per capita, and how that relationship changes across time.\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\ndf = pd.read_csv(\"gapminder.csv\")\n\nsample_years = [1997, 2007]\n\nplt.figure()\nfor y in sample_years:\n    sub = df[df[\"year\"] == y]\n    plt.scatter(sub[\"gdp_per_capita\"], sub[\"life_expectancy\"], label=str(y), alpha=0.7)\n\nplt.xscale(\"log\")\nplt.xlabel(\"GDP per Capita (log scale)\")\nplt.ylabel(\"Life Expectancy\")\nplt.title(\"Life Expectancy vs GDP per Capita (selected years)\")\nplt.legend()\nplt.show()"
+  },
+  {
+    "objectID": "life-gdp.html#interactive-map-life-expectancy-latest-year",
+    "href": "life-gdp.html#interactive-map-life-expectancy-latest-year",
+    "title": "Life Expectancy and GDP per Capita",
+    "section": "Interactive Map (Life Expectancy, latest year)",
+    "text": "Interactive Map (Life Expectancy, latest year)\n\nimport pandas as pd\nimport plotly.express as px\n\ndf = pd.read_csv(\"gapminder.csv\")\nlatest_year = df[\"year\"].max()\nsub = df[df[\"year\"] == latest_year]\n\nfig = px.choropleth(\n    sub,\n    locations=\"country\",\n    locationmode=\"country names\",\n    color=\"life_expectancy\",\n    hover_name=\"country\",\n    title=f\"Life Expectancy by Country ({latest_year})\"\n)\nfig.show()\n\n/var/folders/15/pcl4v6c545qcz_wmc_4r6_gh0000gn/T/ipykernel_13843/613168735.py:8: DeprecationWarning:\n\nThe library used by the *country names* `locationmode` option is changing in an upcoming version. Country names in existing plots may not work in the new version. To ensure consistent behavior, consider setting `locationmode` to *ISO-3*."
   },
   {
     "objectID": "country.html",
