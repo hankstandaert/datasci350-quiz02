@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 df = pd.read_csv("gapminder.csv")
 
-sample_years = [1952, 1977, 2007]
+sample_years = [1997, 2007]
 
 plt.figure()
 for y in sample_years:
